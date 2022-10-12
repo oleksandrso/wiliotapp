@@ -1,35 +1,50 @@
 package androidTests;
 
-import com.codeborne.selenide.SelenideElement;
-import io.appium.java_client.AppiumBy;
-import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static androidTests.TestData.*;
-import static com.codeborne.selenide.Condition.text;
+import static androidTests.CommonActions.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class LoginTests extends TestBase{
+public class LoginTests extends TestBase {
+
+    @Test
+    void appStarted() {
+        System.out.println("App started...");
+    }
 
     @Test
     @DisplayName("Login Test")
-    public void positiveLoginTest(){
-
-
+    public void positiveFirstTimeLoginTest() {
         //open app and try SignIn
-        $(MobileBy.accessibilityId("Wiliot")).click();
-        $(MobileBy.id("com.easternpeak.wiliot:id/btnSignIn")).click();
-        sleep(1000);
+        openWiliotApp();
 
-        //Send Login And Password
-        LOGIN_FIELD.sendKeys(LOGIN);
-        PASSWORD_FIELD.sendKeys(PASSWORD);
-        SUBMIT_BUTTON.click();
-        sleep(1000);
+        //Send Login And Password (in test configuration should be added credentials)
+        login(LOGIN, PASSWORD);
 
         //Check result
-        $(MobileBy.id("com.easternpeak.wiliot:id/alertTitle")).shouldHave(text("Pick an Account"));
+        USER_FROM_LIST.click();
 
+        //logout
+        logout();
+    }
+
+    @Test
+    @DisplayName("Login Test")
+    public void logoutTest() {
+        //open app and try SignIn
+        openWiliotApp();
+        //Send Login And Password (in test configuration should be added credentials)
+        login(LOGIN, PASSWORD);
+        //Check result
+        USER_FROM_LIST.click();
+        //logout
+        logout();
+    }
+
+    @Test
+    void tapAndHold() {
+        //clearChrome();
+        openWiliotApp();
     }
 }
