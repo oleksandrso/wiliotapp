@@ -1,28 +1,26 @@
 package androidTests;
 
-import com.codeborne.selenide.SelenideDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
-import io.appium.java_client.android.nativekey.PressesKey;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.actions;
+import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class CommonActions extends TestData {
-    public static void goToHomePage(){
-        int maxTry=0;
-        while(!DEVICE_HOME_SCREEN.isDisplayed()||maxTry>=10) {
-            back();
-            maxTry++;
-        }
-    }
+
 
     public static void clearChrome() {
 
     }
 
+    public static void home() {
+        ((AndroidDriver) getWebDriver()).pressKey(new KeyEvent(AndroidKey.HOME));
+    }
+
     public static void openWiliotApp() {
-        goToHomePage();
+        home();
         actions().dragAndDropBy(DEVICE_HOME_SCREEN, 0, -1000).perform();
         WILIOT_APP_ICON.click();
     }

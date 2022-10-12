@@ -1,4 +1,4 @@
-package driver;
+package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import io.appium.java_client.android.AndroidDriver;
@@ -12,7 +12,7 @@ import java.net.URL;
 
 import static helpers.FileUtils.getAbsolutePath;
 
-public class LocalDeviceDriver implements WebDriverProvider {
+public class AndroidMobileDriver implements WebDriverProvider {
     public static URL getDeviceUrl() {
         try {
             return new URL("http://127.0.0.1:4723/wd/hub");
@@ -26,15 +26,17 @@ public class LocalDeviceDriver implements WebDriverProvider {
 
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         //Connect to device
-        desiredCapabilities.setCapability(MobileCapabilityType.UDID, "emulator-5554");
+        desiredCapabilities.setCapability(MobileCapabilityType.UDID, "P7RO8L85MBVW6XMJ");
         desiredCapabilities.setCapability("platformName", "android");
         //App actions
 //        desiredCapabilities.setCapability(MobileCapabilityType.APPLICATION_NAME,"Wiliot App");
-//        desiredCapabilities.setCapability("appPackage","com.wiliot.wiliotapp");
-//        desiredCapabilities.setCapability("appActivity","com.wiliotapp.ui.main.MainActivity");
+
 //        desiredCapabilities.setCapability("noReset", "false");
 //        desiredCapabilities.setCapability("fullReset", "true");
-//        desiredCapabilities.setCapability(MobileCapabilityType.APP, getAbsolutePath("src/test/resources/apk/wiliot.apk"));-изза того что сразу открывается браузер - не отрабатывает правильно драйвер
+//        desiredCapabilities.setCapability(MobileCapabilityType.APP, getAbsolutePath("src/test/resources/apk/wiliot.apk"));
+//        desiredCapabilities.setCapability("appPackage","com.wiliot.wiliotapp");
+//        desiredCapabilities.setCapability("appActivity","com.wiliotapp.ui.main.MainActivity");
+//        -изза того что сразу открывается браузер - не отрабатывает правильно драйвер
 
 
         return new AndroidDriver(getDeviceUrl(), desiredCapabilities);

@@ -10,6 +10,7 @@ public class LoginTests extends TestBase {
 
     @Test
     void appStarted() {
+        home();
         System.out.println("App started...");
     }
 
