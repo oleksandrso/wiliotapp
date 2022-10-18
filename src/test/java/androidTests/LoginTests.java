@@ -36,4 +36,6 @@ public class LoginTests extends TestBase {
         //check logout on chrome
         LOGIN_FIELD.shouldBe(visible);//-?
     }
+
+
 }

@@ -18,6 +18,8 @@ public class TestBase{
         browser = AndroidMobileDriver.class.getName();
         timeout = 5000;
         browserSize = null;
+        open();
+        installApp();
     }
 
     @AfterAll
@@ -28,13 +30,10 @@ public class TestBase{
 
     @BeforeEach
     public void startDriver() {
-        open();
-        installApp();
     }
 
     @AfterEach
     public void afterEach() {
         screenshot("lastScreenshot");
-
     }
 }
