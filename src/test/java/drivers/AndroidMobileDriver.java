@@ -26,8 +26,12 @@ public class AndroidMobileDriver implements WebDriverProvider {
 
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         //Connect to device
-        desiredCapabilities.setCapability(MobileCapabilityType.UDID, "P7RO8L85MBVW6XMJ");
+        desiredCapabilities.setCapability(MobileCapabilityType.UDID, "P7RO8L85MBVW6XMJ"); //Poco M4 Pro
+        //desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Emulator-5554");
+        //desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "PJLZUSTGEQUSSSOR");
+
         desiredCapabilities.setCapability("platformName", "android");
+
         //App actions
 //        desiredCapabilities.setCapability(MobileCapabilityType.APPLICATION_NAME,"Wiliot App");
 

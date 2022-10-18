@@ -4,25 +4,31 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 
-import static com.codeborne.selenide.Selenide.actions;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static helpers.FileUtils.getAbsolutePath;
 
 public class CommonActions extends TestData {
+    private static final AndroidDriver androidDriver=(AndroidDriver) getWebDriver();
 
 
-    public static void clearChrome() {
-
+    public static void installApp() {
+        if (!androidDriver.isAppInstalled(APP_PACKAGE)) {
+            androidDriver.installApp(getAbsolutePath("src/test/resources/apk/wiliot.apk"));
+        }
+    }
+    public static void removeApp() {
+        if (androidDriver.isAppInstalled(APP_PACKAGE)) {
+            androidDriver.removeApp(APP_PACKAGE);
+        }
     }
 
     public static void home() {
-        ((AndroidDriver) getWebDriver()).pressKey(new KeyEvent(AndroidKey.HOME));
+        androidDriver.pressKey(new KeyEvent(AndroidKey.HOME));
     }
 
     public static void openWiliotApp() {
-        home();
-        actions().dragAndDropBy(DEVICE_HOME_SCREEN, 0, -1000).perform();
-        WILIOT_APP_ICON.click();
+        androidDriver.activateApp(APP_PACKAGE);
     }
 
     static public void login(String login, String password) {
