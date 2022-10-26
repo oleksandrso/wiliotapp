@@ -3,10 +3,16 @@ package androidTests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static androidTests.CommonActions.*;
+import static androidTests.AndroidCommonActions.LOGIN;
+import static androidTests.AndroidCommonActions.PASSWORD;
+import static androidTests.AndroidCommonActions.USER_FROM_LIST;
+import static androidTests.AndroidCommonActions.login;
+import static androidTests.AndroidCommonActions.logout;
+import static androidTests.AndroidCommonActions.openWiliotApp;
+import static androidTests.TestData.LOGIN_FIELD;
 import static com.codeborne.selenide.Condition.visible;
 
-public class LoginTests extends TestBase {
+public class LoginTests extends AndroidTestBase {
 
 
     @Test
@@ -36,6 +42,4 @@ public class LoginTests extends TestBase {
         //check logout on chrome
         LOGIN_FIELD.shouldBe(visible);//-?
     }
-
-
 }
