@@ -14,7 +14,7 @@ public class Utils {
 
     public static URL getDeviceUrl() {
         try {
-            return new URL("http://127.0.0.1:4723/");
+            return new URL(System.getProperty("appiumUrl","http://127.0.0.1/"));
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

@@ -1,9 +1,14 @@
-package androidTests;
+package android;
 
+import android.pageObjects.TestData;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 
+import static android.pageObjects.AccountAppSettingsMenu.ACCOUNT_BUTTON_LOGOUT;
+import static android.pageObjects.AccountAppSettingsMenu.ACCOUNT_BUTTON_LOGOUT_CONFIRM;
+import static android.pageObjects.GeneralAppItems.ACCOUNT_BUTTON;
+import static android.pageObjects.LoginPage.*;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static helpers.Utils.getAbsolutePath;

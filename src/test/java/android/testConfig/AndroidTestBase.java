@@ -1,13 +1,13 @@
-package androidTests;
+package android.testConfig;
 
-import drivers.AndroidMobileDriver;
+import android.testConfig.AndroidMobileDriver;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-import static androidTests.AndroidCommonActions.installApp;
-import static androidTests.AndroidCommonActions.removeApp;
+import static android.AndroidCommonActions.installApp;
+import static android.AndroidCommonActions.removeApp;
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.*;
 

@@ -10,6 +10,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static helpers.Utils.getAbsolutePath;
 import static helpers.Utils.getDeviceUrl;
+import static io.appium.java_client.remote.MobileCapabilityType.*;
+import static org.openqa.selenium.remote.CapabilityType.PLATFORM_NAME;
 
 public class iOSMobileDriver implements WebDriverProvider {
 
@@ -19,13 +21,13 @@ public class iOSMobileDriver implements WebDriverProvider {
 
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         //Connect to device
-        desiredCapabilities.setCapability(MobileCapabilityType.UDID, "00008030-001A75193E53402E"); //iPhone
-        desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone SE");
-        desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.IOS);
+        desiredCapabilities.setCapability(UDID, "00008030-001A75193E53402E"); //iPhone
+        desiredCapabilities.setCapability(DEVICE_NAME, "iPhone SE");
+        desiredCapabilities.setCapability(PLATFORM_NAME, Platform.IOS);
 
         //App actions
-        desiredCapabilities.setCapability(MobileCapabilityType.APP, getAbsolutePath("src/test/resources/app/williot.ipa"));
-        desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
+        desiredCapabilities.setCapability(APP, getAbsolutePath("src/test/resources/app/williot.ipa"));
+        desiredCapabilities.setCapability(AUTOMATION_NAME, "XCUITest");
 
         return new IOSDriver(getDeviceUrl(), desiredCapabilities);
     }

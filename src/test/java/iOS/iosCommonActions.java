@@ -10,7 +10,7 @@ import static iOS.pageObgects.LoginPage.LOGIN_FIELD;
 import static iOS.pageObgects.LoginPage.PASSWORD_FIELD;
 import static iOS.pageObgects.LoginPage.SUBMIT_BUTTON;
 
-public class iosCommonActions extends TestData {
+public class iosCommonActions {
 
     static public void login(String login, String password) {
         sleep(5000);

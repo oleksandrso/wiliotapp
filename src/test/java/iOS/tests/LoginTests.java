@@ -2,6 +2,7 @@ package iOS.tests;
 
 import iOS.testsConfig.iosTestBase;
 import io.appium.java_client.AppiumBy;
+import net.bytebuddy.build.Plugin;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +16,6 @@ public class LoginTests extends iosTestBase {
 
 
     @Test
-
     @DisplayName("Login Test")
     public void positiveFirstTimeLoginTest() {
         String LOGIN = "autotest_new@wiliot.com", PASSWORD = "!Qxys83=!NaPEOF-QLM]";
