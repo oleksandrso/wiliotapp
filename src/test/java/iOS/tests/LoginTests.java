@@ -18,7 +18,7 @@ public class LoginTests extends iosTestBase {
     @Test
     @DisplayName("Login Test")
     public void positiveFirstTimeLoginTest() {
-        String LOGIN = "autotest_new@wiliot.com", PASSWORD = "!Qxys83=!NaPEOF-QLM]";
+        String LOGIN = "autotest_new@wiliot.com", PASSWORD = "L6V@h&rVuc%8z:E$RqNJ";
 //        String LOGIN = "oleksandr.sotnichenko@wiliot.com", PASSWORD = "Sasha93sot09!";
         //Send Login And Password (in test configuration should be added credentials)
         login(LOGIN, PASSWORD);

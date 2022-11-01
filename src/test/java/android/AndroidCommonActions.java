@@ -1,5 +1,6 @@
 package android;
 
+import android.pageObjects.GeneralAppItems;
 import android.pageObjects.TestData;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
@@ -7,7 +8,6 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 
 import static android.pageObjects.AccountAppSettingsMenu.ACCOUNT_BUTTON_LOGOUT;
 import static android.pageObjects.AccountAppSettingsMenu.ACCOUNT_BUTTON_LOGOUT_CONFIRM;
-import static android.pageObjects.GeneralAppItems.ACCOUNT_BUTTON;
 import static android.pageObjects.LoginPage.*;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -51,7 +51,7 @@ public class AndroidCommonActions extends TestData {
     }
 
     static public void logout() {
-        ACCOUNT_BUTTON.click();
+        GeneralAppItems.ACCOUNT_BUTTON.click();
         sleep(2000);
         ACCOUNT_BUTTON_LOGOUT.click();
         ACCOUNT_BUTTON_LOGOUT_CONFIRM.click();
